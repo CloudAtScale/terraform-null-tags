@@ -16,9 +16,13 @@ This module is used to create tags for different resources that are supported by
 - Ability to create inventory reports accross multiple cloud providers and others resources that support tags
 - Ability to identify the version of the tagging schema used to create the resources and create automation around it.
 
-## Usage
+## Usage examples
 
-### `main.tf`
+### Github
+
+#### Terraform files
+
+`main.tf`
 
 ```hcl
 module "tags" {
@@ -36,7 +40,7 @@ module "tags" {
 }
 ```
 
-### `variables.tf`
+`variables.tf`
 
 ```hcl
 variable "git_project_url" {
@@ -45,14 +49,51 @@ variable "git_project_url" {
 }
 ```
 
-### In your CI/CD pipeline
-
-For Github Actions, use:
+#### For Github Actions, use:
 
 ```yaml
     env:
       TF_VAR_git_project_url: ${{ github.repository }}
-      TF_VAR_project_name: ${{ github.event.repository.name }}
+```
+
+### Gitlab
+
+#### Terraform files
+
+`main.tf`
+
+```hcl
+module "tags" {
+  source  = "CloudAtScale/tags/null"
+  version = "x.x.x"
+
+  vcs_provider = "gitlab"
+
+  git_project_url   = var.git_project_url
+  gitlab_project_id = var.gitlab_project_id
+  team              = "MyAwesomeTeam"
+  environment       = "MyAwesomeEnvironment"
+  project_name      = "MyAwesomeProject"
+
+  extra_tags = {
+      "extra_tag_1" = "extra_tag_1_value"
+      "extra_tag_2" = "extra_tag_2_value"
+  }
+}
+```
+
+`variables.tf`
+
+```hcl
+variable "git_project_url" {
+  type        = string
+  description = "The URL of the git project"
+}
+
+variable "gitlab_project_id" {
+  type        = string
+  description = "The ID of the gitlab project"
+}
 ```
 
 For Gitlab CI, use:
@@ -60,7 +101,7 @@ For Gitlab CI, use:
 ```yaml
     variables:
       TF_VAR_git_project_url: $CI_PROJECT_URL
-      TF_VAR_project_name: $CI_PROJECT_NAME
+      TF_VAR_gitlab_project_id : $CI_PROJECT_ID
 ```
 
 ## How to use this module

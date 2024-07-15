@@ -27,3 +27,13 @@ output "extra_tags" {
   description = "Extra Tags"
   value       = var.extra_tags
 }
+
+output "vcs_provider" {
+  description = "VCS Provider"
+  value       = var.vcs_provider
+}
+
+output "gitlab_project_id" {
+  description = "Gitlab Project ID"
+  value       = var.gitlab_project_id == null ? "N/A" : var.gitlab_project_id
+}
