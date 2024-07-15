@@ -1,0 +1,44 @@
+on:
+  push:
+    branches:
+      - main
+
+name: Release
+jobs:
+  Release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      discussions: write
+      packages: write
+    steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install dependencies
+        run: |
+          sudo add-apt-repository ppa:rmescandon/yq -y
+          sudo apt update
+          sudo apt install -y git unzip tar yq
+      - name: Install Semantic Release
+        run: |
+          npm install -g semantic-release \
+            @semantic-release/changelog \
+            @semantic-release/commit-analyzer \
+            @semantic-release/exec\
+            @semantic-release/git \
+            @semantic-release/github \
+            @semantic-release/release-notes-generator \
+            conventional-changelog-conventionalcommits
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Release
+        shell: bash
+        run: semantic-release
+        env:
+          GH_TOKEN: ${{ github.token }}

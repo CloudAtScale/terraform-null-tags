@@ -1,0 +1,46 @@
+# # see: https://terraform-docs.io/user-guide/configuration/version
+# version: ">= 0.10, < 0.12"
+
+# see: https://terraform-docs.io/user-guide/configuration/formatter
+formatter: markdown table
+
+# see: https://terraform-docs.io/user-guide/configuration/header-from
+header-from: terraform-docs/HEADER.md
+
+# see: https://terraform-docs.io/user-guide/configuration/footer-from
+footer-from: terraform-docs/FOOTER.md
+
+# see: https://terraform-docs.io/user-guide/configuration/recursive
+# recursive:
+#   enabled: false
+#   path: modules
+#   include-main: false
+
+# see: https://terraform-docs.io/user-guide/configuration/sections
+sections:
+  show:
+    - header
+    - requirements
+    - inputs
+    - providers
+    - outputs
+    - footer
+
+sort:
+  enabled: true
+  by: required
+
+# # https://terraform-docs.io/user-guide/configuration/output-values/
+# output-values:
+#   enabled: false
+#   from: ""
+
+# see: https://terraform-docs.io/user-guide/configuration/settings
+settings:
+  indent: 3
+
+output:
+  file: README.md
+  mode: replace
+  template: |-
+    {{ .Content }}
