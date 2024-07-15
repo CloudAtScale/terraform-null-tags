@@ -1,0 +1,59 @@
+on: pull_request
+name: Pull Request
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - name: Render terraform docs inside the README.md and push changes back to PR branch
+        uses: terraform-docs/gh-actions@v1.2.0
+        with:
+          working-dir: .
+          config-file: .terraform-docs.yml
+
+  PreCommit:
+    name: Pre-Commit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+      - name: Install Pre-Commit
+        run: |
+          sudo add-apt-repository ppa:rmescandon/yq -y
+          sudo apt update
+          sudo apt install -y git unzip tar yq
+          pip install pre-commit
+      - name: Run Pre-Commit
+        run: pre-commit run --all-files
+
+  TerraformValidateAndPlan:
+    name: Terraform Validate and Plan
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tests
+    env:
+      TF_VAR_git_project_url: ${{ github.repository }}
+      TF_VAR_project_name: ${{ github.event.repository.name }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+      - name: Terraform Init
+        run: terraform init
+      - name: Terraform Validate
+        run: terraform validate
+      - name: Terraform Plan
+        run: terraform plan -out=plan.out
