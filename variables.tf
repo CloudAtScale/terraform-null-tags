@@ -44,3 +44,19 @@ variable "project_name" {
     error_message = "Project name must be provided."
   }
 }
+
+variable "gitlab_project_id" {
+  default     = null
+  description = "Gitlab project id"
+  type        = number
+}
+
+variable "vcs_provider" {
+  description = "VCS provider"
+  type        = string
+  default     = "github"
+  validation {
+    condition     = var.vcs_provider == "github" || var.vcs_provider == "gitlab"
+    error_message = "VCS provider must be github or gitlab. Default is github."
+  }
+}
