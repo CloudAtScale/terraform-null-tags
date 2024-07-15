@@ -4,27 +4,63 @@ This module is used to create tags for different resources that are supported by
 
 ## Goals
 
-- Create a well-versioned tagging schema
-- Create tags for different resources that are supported by tags
-- Define a tagging schema that is easy to understand and maintain
-- Create a tagging schema that is easy to implement in different cloud providers
+- Create a well-versioned tagging schema.
+- Create tags for different resources that are supported by tags.
+- Define a tagging schema that is easy to understand and maintain.
+- Create a tagging schema that is easy to implement in different cloud providers.
 - Ability to understand resources created with their origin.
+
+## Why?
+
+- Tags are used to identify resources in the cloud.
+- Ability to create inventory reports accross multiple cloud providers and others resources that support tags
+- Ability to identify the version of the tagging schema used to create the resources and create automation around it.
 
 ## Usage
 
+### `main.tf`
+
 ```hcl
 module "tags" {
-    source = ""
+  source  = "CloudAtScale/tags/null"
+  version = "x.x.x"
 
-    git_project_url = ""
-    team            = "MyAwesomeTeam"
-    environment     = "MyAwesomeEnvironment"
-    project_name    = "MyAwesomeProject"
-    extra_tags      = {
-        "extra_tag_1" = "extra_tag_1_value"
-        "extra_tag_2" = "extra_tag_2_value"
-    }
+  git_project_url = var.git_project_url
+  team            = "MyAwesomeTeam"
+  environment     = "MyAwesomeEnvironment"
+  project_name    = "MyAwesomeProject"
+  extra_tags      = {
+      "extra_tag_1" = "extra_tag_1_value"
+      "extra_tag_2" = "extra_tag_2_value"
+  }
 }
+```
+
+### `variables.tf`
+
+```hcl
+variable "git_project_url" {
+  type        = string
+  description = "The URL of the git project"
+}
+```
+
+### In your CI/CD pipeline
+
+For Github Actions, use:
+
+```yaml
+    env:
+      TF_VAR_git_project_url: ${{ github.repository }}
+      TF_VAR_project_name: ${{ github.event.repository.name }}
+```
+
+For Gitlab CI, use:
+
+```yaml
+    variables:
+      TF_VAR_git_project_url: $CI_PROJECT_URL
+      TF_VAR_project_name: $CI_PROJECT_NAME
 ```
 
 ## How to use this module
