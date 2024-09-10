@@ -1,3 +1,9 @@
+## [1.1.1](https://github.com/CloudAtScale/terraform-null-tags/compare/1.1.0...1.1.1) (2024-09-10)
+
+### :package: Miscellaneous Chores
+
+* **deps:** update terraform-docs/gh-actions action to v1.2.2 ([#6](https://github.com/CloudAtScale/terraform-null-tags/issues/6)) ([ceb87df](https://github.com/CloudAtScale/terraform-null-tags/commit/ceb87df6cfeb18e5f27fba7ae4e57c551a6a8de1))
+
 ## [1.1.0](https://github.com/CloudAtScale/terraform-null-tags/compare/1.0.0...1.1.0) (2024-07-16)
 
 ### :rocket: Features
