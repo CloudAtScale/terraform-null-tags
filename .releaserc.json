@@ -94,7 +94,7 @@
     [
       "@semantic-release/exec",
       {
-        "prepareCmd": "yq e '.ModuleVersion = \"${nextRelease.version}\"' -i version.yaml"
+        "verifyReleaseCmd": "yq e '.ModuleVersion = \"${nextRelease.version}\"' -i version.yaml"
       }
     ]
   ],
