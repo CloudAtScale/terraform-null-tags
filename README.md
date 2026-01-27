@@ -170,6 +170,26 @@ All tags are returned in a map:
 | <a name="output_team"></a> [team](#output\_team) | Team |
 | <a name="output_vcs_provider"></a> [vcs\_provider](#output\_vcs\_provider) | VCS Provider |
 
+## Contributors
+
+We welcome and appreciate all contributions to this project! Thank you to everyone who has helped make terraform-module-tags better.
+
+### How to Become a Contributor
+
+Contributions come in many forms:
+- Submitting pull requests with code improvements
+- Reporting bugs and suggesting features
+- Improving documentation
+- Sharing feedback and ideas
+- Helping other users in issues and discussions
+
+### Recognition
+
+All contributors are recognized for their valuable contributions. For more information on how to contribute, please see our [Contributing Guidelines](CONTRIBUTING.md).
+
+<!-- Use GitHub's contributor functionality to display contributors -->
+<!-- This section will be automatically updated with contributor avatars -->
+
 ## Disclaimer
 
 This module is most for example to show how to create tags for different resources that are supported by tags with a well-versioned tagging schema.
