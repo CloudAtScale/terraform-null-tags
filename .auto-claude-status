@@ -1,0 +1,25 @@
+{
+  "active": true,
+  "spec": "001-fix-critical-typo-and-production-issues",
+  "state": "building",
+  "subtasks": {
+    "completed": 1,
+    "total": 8,
+    "in_progress": 1,
+    "failed": 0
+  },
+  "phase": {
+    "current": "Fix Critical Typo",
+    "id": null,
+    "total": 3
+  },
+  "workers": {
+    "active": 0,
+    "max": 1
+  },
+  "session": {
+    "number": 3,
+    "started_at": "2026-01-27T11:16:46.435195"
+  },
+  "last_update": "2026-01-27T11:23:40.584656"
+}
