@@ -1,0 +1,41 @@
+# CODEOWNERS File
+#
+# This file defines who needs to approve pull requests for different parts of the codebase.
+#
+# Format: <pattern> <username> or <email>
+# - An @ followed by a username references a GitHub user
+# - An email address references a user by email
+# - Lines starting with # are comments
+#
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Global owners - These users own all files in the repository
+# They will be requested as reviewers for all pull requests unless overridden below
+* @CloudAtScale/maintainers
+
+# Core Terraform module files
+# These files contain the main module logic and require maintainer review
+*.tf @CloudAtScale/maintainers
+tests/ @CloudAtScale/maintainers
+examples/ @CloudAtScale/maintainers
+
+# Documentation files
+# Documentation changes can be reviewed by documentation contributors
+README.md @CloudAtScale/maintainers
+CHANGELOG.md @CloudAtScale/maintainers
+CONTRIBUTING.md @CloudAtScale/maintainers
+docs/ @CloudAtScale/maintainers
+templates/ @CloudAtScale/maintainers
+
+# GitHub configuration
+# Changes to workflows, templates, and bot configurations require maintainer review
+.github/ @CloudAtScale/maintainers
+
+# Build and CI configuration
+# Changes to automated testing, linting, and release processes
+.pre-commit-config.yaml @CloudAtScale/maintainers
+.pre-commit-hooks.yaml @CloudAtScale/maintainers
+Makefile @CloudAtScale/maintainers
+
+# README at the root is owned by maintainers
+/README.md @CloudAtScale/maintainers
