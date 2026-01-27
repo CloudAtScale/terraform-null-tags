@@ -1,3 +1,20 @@
+## [2.0.0](https://github.com/CloudAtScale/terraform-module-tags/compare/1.1.0...2.0.0) (2025-01-27)
+
+### :rocket: Features
+
+* **validation:** add comprehensive validation for required tag inputs to prevent empty or null values
+* **production-readiness:** update documentation to clearly state production readiness and remove example-only disclaimer
+
+### :bug: Bug Fixes
+
+* **tags:** fix critical typo in tag key from 'Onwer:Team' to 'Owner:Team' - **BREAKING CHANGE**: this changes the tag key name and may require updates to existing resources
+* **examples:** update all examples and documentation to use corrected 'Owner:Team' tag key
+
+### :books: Documentation
+
+* **readme:** remove disclaimer stating module is "most for example" to indicate production readiness
+* **readme:** update documentation to clearly state production-readiness and professional usage
+
 ## [1.1.0](https://github.com/CloudAtScale/terraform-null-tags/compare/1.0.0...1.1.0) (2024-09-24)
 
 ### :rocket: Features
