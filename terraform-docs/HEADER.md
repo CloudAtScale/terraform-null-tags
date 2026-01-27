@@ -128,7 +128,7 @@ All tags are returned in a map:
 ```json
 {
     "ProjectName": "MyAwesomeProject",
-    "Onwer:Team": "MyAwesomeTeam",
+    "Owner:Team": "MyAwesomeTeam",
     "Environment": "MyAwesomeEnvironment",
     "extra_tag_1": "extra_tag_1_value",
     "extra_tag_2": "extra_tag_2_value",

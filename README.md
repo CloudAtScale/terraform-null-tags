@@ -128,7 +128,7 @@ All tags are returned in a map:
 ```json
 {
     "ProjectName": "MyAwesomeProject",
-    "Onwer:Team": "MyAwesomeTeam",
+    "Owner:Team": "MyAwesomeTeam",
     "Environment": "MyAwesomeEnvironment",
     "extra_tag_1": "extra_tag_1_value",
     "extra_tag_2": "extra_tag_2_value",
@@ -169,7 +169,3 @@ All tags are returned in a map:
 | <a name="output_project_name"></a> [project\_name](#output\_project\_name) | Project Name |
 | <a name="output_team"></a> [team](#output\_team) | Team |
 | <a name="output_vcs_provider"></a> [vcs\_provider](#output\_vcs\_provider) | VCS Provider |
-
-## Disclaimer
-
-This module is most for example to show how to create tags for different resources that are supported by tags with a well-versioned tagging schema.

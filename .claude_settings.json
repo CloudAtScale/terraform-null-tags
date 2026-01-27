@@ -1,0 +1,39 @@
+{
+  "sandbox": {
+    "enabled": true,
+    "autoAllowBashIfSandboxed": true
+  },
+  "permissions": {
+    "defaultMode": "acceptEdits",
+    "allow": [
+      "Read(./**)",
+      "Write(./**)",
+      "Edit(./**)",
+      "Glob(./**)",
+      "Grep(./**)",
+      "Read(/Users/johgirard/Perso/CloudAtScale/GitHub/terraform-module-tags/.auto-claude/worktrees/tasks/001-fix-critical-typo-and-production-issues/**)",
+      "Write(/Users/johgirard/Perso/CloudAtScale/GitHub/terraform-module-tags/.auto-claude/worktrees/tasks/001-fix-critical-typo-and-production-issues/**)",
+      "Edit(/Users/johgirard/Perso/CloudAtScale/GitHub/terraform-module-tags/.auto-claude/worktrees/tasks/001-fix-critical-typo-and-production-issues/**)",
+      "Glob(/Users/johgirard/Perso/CloudAtScale/GitHub/terraform-module-tags/.auto-claude/worktrees/tasks/001-fix-critical-typo-and-production-issues/**)",
+      "Grep(/Users/johgirard/Perso/CloudAtScale/GitHub/terraform-module-tags/.auto-claude/worktrees/tasks/001-fix-critical-typo-and-production-issues/**)",
+      "Read(/Users/johgirard/Perso/CloudAtScale/GitHub/terraform-module-tags/.auto-claude/worktrees/tasks/001-fix-critical-typo-and-production-issues/.auto-claude/specs/001-fix-critical-typo-and-production-issues/**)",
+      "Write(/Users/johgirard/Perso/CloudAtScale/GitHub/terraform-module-tags/.auto-claude/worktrees/tasks/001-fix-critical-typo-and-production-issues/.auto-claude/specs/001-fix-critical-typo-and-production-issues/**)",
+      "Edit(/Users/johgirard/Perso/CloudAtScale/GitHub/terraform-module-tags/.auto-claude/worktrees/tasks/001-fix-critical-typo-and-production-issues/.auto-claude/specs/001-fix-critical-typo-and-production-issues/**)",
+      "Read(/Users/johgirard/Perso/CloudAtScale/GitHub/terraform-module-tags/.auto-claude/**)",
+      "Write(/Users/johgirard/Perso/CloudAtScale/GitHub/terraform-module-tags/.auto-claude/**)",
+      "Edit(/Users/johgirard/Perso/CloudAtScale/GitHub/terraform-module-tags/.auto-claude/**)",
+      "Glob(/Users/johgirard/Perso/CloudAtScale/GitHub/terraform-module-tags/.auto-claude/**)",
+      "Grep(/Users/johgirard/Perso/CloudAtScale/GitHub/terraform-module-tags/.auto-claude/**)",
+      "Bash(*)",
+      "WebFetch(*)",
+      "WebSearch(*)",
+      "mcp__context7__resolve-library-id(*)",
+      "mcp__context7__get-library-docs(*)",
+      "mcp__graphiti-memory__search_nodes(*)",
+      "mcp__graphiti-memory__search_facts(*)",
+      "mcp__graphiti-memory__add_episode(*)",
+      "mcp__graphiti-memory__get_episodes(*)",
+      "mcp__graphiti-memory__get_entity_edge(*)"
+    ]
+  }
+}

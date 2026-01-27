@@ -48,3 +48,6 @@ terraform.rc
 
 # Built Visual Studio Code Extensions
 *.vsix
+
+# Auto Claude data directory
+.auto-claude/

@@ -7,7 +7,7 @@ variable "git_project_url" {
   description = "Git project url"
   type        = string
   validation {
-    condition     = var.git_project_url != null
+    condition     = var.git_project_url != null && var.git_project_url !=""
     error_message = "Git project url must be provided."
   }
 }
@@ -16,7 +16,7 @@ variable "team" {
   description = "Team name"
   type        = string
   validation {
-    condition     = var.team != null
+    condition     = var.team != null && var.team !=""
     error_message = "Team name must be provided."
   }
 }
@@ -25,7 +25,7 @@ variable "environment" {
   description = "Environment name"
   type        = string
   validation {
-    condition     = var.environment != null
+    condition     = var.environment != null && var.environment !=""
     error_message = "Environment name must be provided."
   }
 }
@@ -40,7 +40,7 @@ variable "project_name" {
   description = "Project name"
   type        = string
   validation {
-    condition     = var.project_name != null
+    condition     = var.project_name != null && var.project_name !=""
     error_message = "Project name must be provided."
   }
 }
