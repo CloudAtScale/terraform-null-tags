@@ -1,0 +1,25 @@
+{
+  "active": true,
+  "spec": "004-community-contribution-templates",
+  "state": "building",
+  "subtasks": {
+    "completed": 1,
+    "total": 11,
+    "in_progress": 1,
+    "failed": 0
+  },
+  "phase": {
+    "current": "Contributing Guidelines",
+    "id": null,
+    "total": 1
+  },
+  "workers": {
+    "active": 0,
+    "max": 1
+  },
+  "session": {
+    "number": 4,
+    "started_at": "2026-01-27T11:26:05.642662"
+  },
+  "last_update": "2026-01-27T11:31:26.263936"
+}
