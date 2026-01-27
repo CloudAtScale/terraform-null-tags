@@ -3,23 +3,23 @@
   "spec": "001-fix-critical-typo-and-production-issues",
   "state": "building",
   "subtasks": {
-    "completed": 5,
+    "completed": 6,
     "total": 8,
     "in_progress": 1,
     "failed": 0
   },
   "phase": {
-    "current": "Improve Input Validation",
+    "current": "Update Version and Changelog",
     "id": null,
-    "total": 1
+    "total": 2
   },
   "workers": {
     "active": 0,
     "max": 1
   },
   "session": {
-    "number": 7,
+    "number": 8,
     "started_at": "2026-01-27T11:16:46.435195"
   },
-  "last_update": "2026-01-27T11:31:56.173461"
+  "last_update": "2026-01-27T11:37:21.628574"
 }
