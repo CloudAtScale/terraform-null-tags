@@ -3,7 +3,7 @@ locals {
   default_tags = merge({
     "Environment"                                    = var.environment
     "ProjectName"                                    = var.project_name
-    "Onwer${var.delimiter}Team"                      = var.team
+    "Owner${var.delimiter}Team"                      = var.team
     "Compliance${var.delimiter}TaggingSchemaVersion" = yamldecode(file("${path.module}/version.yaml"))["ModuleVersion"],
     },
     var.extra_tags
