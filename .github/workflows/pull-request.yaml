@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: "20"
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
+        uses: hashicorp/setup-terraform@v4
       - name: Install Pre-Commit
         run: |
           sudo add-apt-repository ppa:rmescandon/yq -y
@@ -50,7 +50,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
+        uses: hashicorp/setup-terraform@v4
       - name: Terraform Init
         run: terraform init
       - name: Terraform Validate
